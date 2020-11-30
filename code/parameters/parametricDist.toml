@@ -1,0 +1,8 @@
+title = "parametric distribution"
+
+[debug]
+base_distr = ["exponential", "weibull", "lnorm", "llogis", "gompertz", "gamma"]
+custom_distr = ["invgauss", "invgamma", "burr"] 
+
+t0 = 0
+t1 = 70

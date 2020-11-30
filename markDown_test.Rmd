@@ -1,0 +1,20 @@
+---
+title: "The clock is ticking: temporally prioritising eradications on islands"
+output: html_document
+---
+## Parametric distribution evaluation
+The kaplan-meier (KM) non-parametric curve for our survival data was fitted with nine relevant right-skewed parametric distributions in order to determine which curve best described New Zealand's terrestrial vertebrate eradication history.
+
+```{r Distributions, include= FALSE}
+source("code/R/analysis/00-initialization.R")
+source("code/R/analysis/01-survDist.R")
+```
+
+```{r Distribution eval, echo= FALSE}
+#fit KM curve to parametric distributions
+fit_survDistr(surv_data, 
+              surv_parameters$base_distr, #distributions available in R
+              surv_parameters$custom_distr)
+```
+
+The best fitting distributions (based on maximum log likelihoods) include the inverse gaussian, inverse gamma and burr.

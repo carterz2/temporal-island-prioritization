@@ -1,0 +1,31 @@
+# C++ compiled files
+*.o
+*.so
+*.dll
+
+# ignore large data files
+
+
+# R profile files
+*.Rproj.user
+*.Rhistory
+
+# log files
+gurobi.log
+
+# cache
+data/intermediate/*
+data/final/results.rda
+
+# packrat library files
+packrat/lib
+packrat/lib-R
+
+# system files
+schema.ini
+.directory
+
+# do not ignore the following files
+!*.gitkeep
+packrat/lib*/
+.Rproj.user
