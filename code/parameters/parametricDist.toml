@@ -4,5 +4,6 @@ title = "parametric distribution"
 base_distr = ["exponential", "weibull", "lnorm", "llogis", "gompertz", "gamma"]
 custom_distr = ["invgauss", "invgamma", "burr"] 
 
-t0 = 0
-t1 = 70
+t0 = 0 #start time (1980)
+t1 = 40 #present day (2020)
+t2 = 70 # end of study (2050)

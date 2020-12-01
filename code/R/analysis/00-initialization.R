@@ -1,6 +1,7 @@
 # load packages
 library(sf)
 library(dplyr)
+library(ggplot2)
 library(survival)
 library(flexsurv)
 library(statmod)
@@ -13,7 +14,7 @@ MODE <- "debug" # for debugging the code
 # MODE <- "release" # for running the code
 
 # set RNG
-#set.seed(500)
+set.seed(500)
 
 # load parameters
 general_parameters <-
