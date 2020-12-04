@@ -1,11 +1,14 @@
 message("starting 00")
 source("code/R/analysis/00-initialization.R")
 
-message("starting 01")
+message("\nstarting 01")
 source("code/R/analysis/01-survDist.R")
+message("use 'survival_distribution' to view results.")
 
-#source("code/R/analysis/02-prioritizations.R")
-#source("code/R/analysis/03-statistical-analyses.R")
-#source("code/R/analysis/04-exports.R")
+message("starting 02")
+source("code/R/analysis/02-candidateModel.R")
+message("use 'survival_predictions' to view results.")
+
+#source("code/R/analysis/03-exports.R")
 
 

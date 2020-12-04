@@ -10,8 +10,8 @@ library(actuar)
 library(invgamma)
 
 # run mode
-MODE <- "debug" # for debugging the code
-# MODE <- "release" # for running the code
+#MODE <- "debug" # for debugging the code
+MODE <- "release" # for running the code
 
 # set RNG
 set.seed(500)

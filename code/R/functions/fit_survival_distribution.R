@@ -6,6 +6,12 @@
 #' 
 #' @param custom_distr 'character' custom distributions created for analysis
 #' 
+#' @param t0 'integer' start time (yrs), 0 = 1980
+#' 
+#' @param t1 'integer' mid-point time of interest, 40 = 2020 (current day)
+#' 
+#' @param t2 'integer' end time (yrs), 70 = 2050
+#' 
 #' @return `list` of fitted dist results. This list contains the 
 #'    following elements:
 #' \describe{
@@ -260,6 +266,7 @@ fit_survDistr <- function(
                       caption = "summary table of parametric distributions fitted to KM curve."),
          knitr::kable(cie_table,
                       caption = "95-5% CIE for inverse gaussian distribution\nbased on bootstrapping."),
-         inverse_gaussian_dist = ig_confint_plot)
+         inverse_gaussian_plot = ig_confint_plot,
+         ig_dist = ig)
 }
 

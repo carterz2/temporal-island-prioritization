@@ -1,0 +1,4 @@
+title = "candidate model"
+
+[release]
+number_models = 8 #number of top performing models to retrieve

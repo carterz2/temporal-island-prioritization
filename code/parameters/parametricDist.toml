@@ -1,6 +1,6 @@
 title = "parametric distribution"
 
-[debug]
+[release]
 base_distr = ["exponential", "weibull", "lnorm", "llogis", "gompertz", "gamma"]
 custom_distr = ["invgauss", "invgamma", "burr"] 
 
