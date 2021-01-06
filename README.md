@@ -17,6 +17,9 @@
        - candidate model selection
        - temporal eradication predictions
        - model validation
+	   
+3.  To run the code directly:
+	- navigate to the `code` folder and open `main.R`
 		 
 3. To view the complete dataset:
     - navigate to `/data/Appendix_S1_MasterDataset.xlsx`
