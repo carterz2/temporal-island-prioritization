@@ -1,0 +1,66 @@
+---
+title: "The clock is ticking: temporally prioritising eradications on islands"
+output: html_document
+---
+## Parametric distribution evaluation
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r Distributions, include= FALSE}
+source("code/R/analysis/00-initialization.R")
+source("code/R/analysis/01-survDist.R")
+source("code/R/analysis/02-candidateModel.R")
+```
+
+Non-parametric (Kaplan-Meier) survival curve of the survival data used in this study.
+```{r km curve, echo = FALSE}
+  suppressMessages(attach(surv_data)) %>%
+    na.omit(surv_data)
+  surv_data <- mutate(surv_data, all = Event != 0)
+  surv.obj <- Surv(surv_data$Erad_Time, surv_data$all)
+  fit_km <- survfit(surv.obj ~ 1,
+                    data = surv_data)
+    survminer::ggsurvplot(fit_km, 
+                           risk.table = FALSE, 
+                           xlab = "Time (yrs)", 
+                           censor = T, palette = "black", 
+                           conf.int = FALSE, 
+                           legend = "none", 
+                           linetype = 1)
+```
+
+The kaplan-meier (KM) non-parametric curve for our survival data was fitted with nine relevant right-skewed parametric distributions in order to determine which curve best described New Zealand's terrestrial vertebrate eradication history.
+
+```{r Distribution eval, echo=FALSE,warning=FALSE,message=FALSE,error=FALSE, results='hide',fig.keep='all'}
+#fit KM curve to parametric distributions
+distributions <- fit_survDistr(surv_data, 
+                                surv_parameters$base_distr,
+                                surv_parameters$custom_distr,
+                                surv_parameters$t0,
+                                surv_parameters$t1,
+                                surv_parameters$t2)
+
+```
+
+```{r, echo = FALSE}
+distributions[[1]]
+distributions[[2]]
+distributions$inverse_gaussian_plot
+
+```
+
+The best fitting distributions (based on maximum log likelihoods) include the inverse gaussian, inverse gamma and burr. We ultimately selected the inverse gaussian distribution (as seen fitted above with 95-5% CI) for modelling.
+
+## Survival Predictions
+### Outputs include:
+### 1. Summary table of top performing candidate models (delta AICc < 2).
+### 2. Eradication predictions for all rat-invaded islands in New Zealand.
+### 3. Graphical comparison of survival probabilities for previously eradicated islands that have been reinvaded with those that have not been reinvaded. This comparison was used for assessing model validity.
+### 4. Table of eradication probabilities for islands rat-eradicated 2010-2020 as an additional test for assessing model validity.
+```{r survival preds, echo = FALSE}
+
+survival_predictions
+
+```
