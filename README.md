@@ -2,9 +2,8 @@
 ##  The clock is ticking: Temporally prioritizing eradications on islands
 
 ### 1. To view annotated code outputs, use the `main_markDown` file
-       * open the `HTML` version for tidy viewing, or
-	   
-       * open the `Rmd` version to run the code in chunks
+         - open the `HTML` version for tidy viewing, or
+         - open the `Rmd` version to run the code in chunks
 
 ### 2. To view the inner workings of the code
        * navigate to the `/code/R/functions` folder
