@@ -30,3 +30,4 @@ schema.ini
 !*.gitkeep
 packrat/lib*/
 .Rproj.user
+*.html
